@@ -6,8 +6,10 @@ AVG_HOURLY = "5"
 
 date = datetime.now().date()
 filename = f"log-file-{date}.txt"
-current_dir = os.getcwd()
-output_dir = os.path.join(current_dir, filename)
+script_loc = __file__
+script_path = os.path.abspath(script_loc)
+script_dir = os.path.dirname(script_path)
+output_dir = os.path.join(script_dir, filename)
 
 with open(output_dir, 'w') as file:
     
